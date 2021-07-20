@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: `https://designteam.blog/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
+    'gatsby-plugin-image',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -60,32 +60,25 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { allMongodbDesignteamPosts } }) => {
+              return allMongodbDesignteamPosts.nodes.map(node => {
+                return Object.assign({}, {
+                  description: node.description,
+                  date: node.date,
+                  url: node.link,
+                  guid: node.link,
+                  title: node.title,
                 })
               })
             },
             query: `
               {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
+                allMongodbDesignteamPosts(sort: {order: DESC, fields: date}) {
                   nodes {
-                    excerpt
-                    html
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      title
-                      date
-                    }
+                    title
+                    link
+                    description
+                    date
                   }
                 }
               }
