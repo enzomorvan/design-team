@@ -1,1 +1,1 @@
-# designteam.blog
+# Design Team Blog static site
