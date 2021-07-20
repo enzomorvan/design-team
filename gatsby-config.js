@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 module.exports = {
   siteMetadata: {
     title: `Design Team Blog`,
@@ -37,8 +40,8 @@ module.exports = {
           collection: [`posts`],
           server: { address: process.env.MONGO_URI, port: 27017},
           auth: { user: process.env.MONGO_USERNAME, password: process.env.MONGO_PASSWORD },
-          extraParams: { authSource: `admin`, retryWrites: true }
-      }      
+          extraParams: { replicaSet: process.env.MONGO_REPLICA_SET, ssl: true, authSource: `admin`, retryWrites: true }
+        }      
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -108,7 +111,6 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
