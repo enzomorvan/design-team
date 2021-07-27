@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
                     {title}
                   </header>
                   <section className="w-full text-sm">
-                    <p className="">{post.description}</p>
+                    <p dangerouslySetInnerHTML={{__html: post.description}} />
                   </section>
                   <footer className="flex justify-between text-xs">
                     <a className="underline" href={post.link}>
