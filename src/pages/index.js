@@ -8,6 +8,10 @@ import Url from 'url-parse'
 
 const getDomainName = (link) => { 
   const parser = new Url(link)
+
+  if (parser.hostname === 'medium.com')
+    return `${parser.hostname}/${parser.pathname.split('/')[1]}`
+    
   return parser.hostname
 }
 
