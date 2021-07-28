@@ -11,6 +11,24 @@ const getDomainName = (link) => {
   return parser.hostname
 }
 
+const getThumbnail = (image) => {
+  const parser = new Url(image)
+
+  parser.set('query', {
+    w: 400
+  })
+
+  if(parser.hostname === "miro.medium.com") {
+    const path = parser.pathname.split('/')
+    if(path[1] === 'max') {
+      path[2] = 400
+      parser.set('pathname', path.join('/'))
+    }
+  }
+  return parser.toString()
+}
+
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Design Team Blog`
   const posts = data.allMongodbDesignteamPosts.nodes
@@ -42,7 +60,7 @@ const BlogIndex = ({ data, location }) => {
                 >
 
                   <div className="w-full">
-                    <img src={image} alt={title}/>
+                    <img src={getThumbnail(image)} alt="" />
                   </div>
                   <header className="w-full text-base font-semibold">
                     {title}
