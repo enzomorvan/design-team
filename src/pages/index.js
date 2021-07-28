@@ -4,6 +4,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import Url from 'url-parse'
+
+const getDomainName = (link) => { 
+  const parser = new Url(link)
+  return parser.hostname
+}
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Design Team Blog`
@@ -46,7 +52,7 @@ const BlogIndex = ({ data, location }) => {
                   </section>
                   <footer className="flex justify-between text-xs">
                     <a className="underline" href={post.link}>
-                      source
+                      {getDomainName(post.link)}
                     </a>
                     <div className="">
                       {new Date(post.date).toLocaleDateString()}
