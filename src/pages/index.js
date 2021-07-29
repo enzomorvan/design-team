@@ -4,6 +4,34 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import Url from 'url-parse'
+
+const getDomainName = (link) => { 
+  const parser = new Url(link)
+
+  if (parser.hostname === 'medium.com')
+    return `${parser.hostname}/${parser.pathname.split('/')[1]}`
+    
+  return parser.hostname
+}
+
+const getThumbnail = (image) => {
+  const parser = new Url(image)
+
+  parser.set('query', {
+    w: 400
+  })
+
+  if(parser.hostname === "miro.medium.com") {
+    const path = parser.pathname.split('/')
+    if(path[1] === 'max') {
+      path[2] = 400
+      parser.set('pathname', path.join('/'))
+    }
+  }
+  return parser.toString()
+}
+
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Design Team Blog`
@@ -36,17 +64,17 @@ const BlogIndex = ({ data, location }) => {
                 >
 
                   <div className="w-full">
-                    <img src={image} alt={title}/>
+                    <img src={getThumbnail(image)} alt="" />
                   </div>
                   <header className="w-full text-base font-semibold">
                     {title}
                   </header>
                   <section className="w-full text-sm">
-                    <p className="">{post.description}</p>
+                    <div dangerouslySetInnerHTML={{__html: post.description}} />
                   </section>
                   <footer className="flex justify-between text-xs">
                     <a className="underline" href={post.link}>
-                      source
+                      {getDomainName(post.link)}
                     </a>
                     <div className="">
                       {new Date(post.date).toLocaleDateString()}
