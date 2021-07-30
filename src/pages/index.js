@@ -51,7 +51,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo />
-      <p className="text-xs md:text-base mb-6">
+      <p className="text-sm md:text-base mb-6">
         <span className="font-semibold">Articles from:</span>
         <br /> <a href="https://airbnb.design/">Airbnb</a>,{" "}
         <a href="https://asanadesign.medium.com/">Asana</a>,{" "}
@@ -61,7 +61,7 @@ const BlogIndex = ({ data, location }) => {
         <a href="https://medium.com/facebook-design">Facebook</a>,{" "}
         <a href="https://figma.com/blog/">Figma</a>,{" "}
         <a href="https://design.google/library/">Google</a>,{" "}
-        <a href="https://invisionapp.com/inside-design/">InVision</a>,{" "}
+        <a href="https://invisionapp.com/inside-design/">Invision</a>,{" "}
         <a href="https://design.lyft.com/">Lyft</a>,{" "}
         <a href="https://medium.design/">Medium</a>,{" "}
         <a href="https://medium.com/mozilla-opendesign">Mozilla</a>,{" "}
@@ -77,7 +77,7 @@ const BlogIndex = ({ data, location }) => {
           href="mailto:rob@robedwards.org?subject=Missing%20blog%20on%20designteam.blog&body=Hi%20Rob%2C%0D%0A%0D%0ALove%20the%20site%2C%20love%20you.%20However%2C%20I%20think%20you%20need%20to%20add%3A%20%5BSUGGESTION%20HERE%5D.%0D%0A%0D%0AThanks%20for%20the%20resource%2C%20you%20really%20didn't%20have%20to.%0D%0A%0D%0ABest%2C%0D%0A%0D%0AKind%20stranger."
           className="underline"
         >
-          someone missing?
+          who's missing?
         </a>
       </p>
 
@@ -104,11 +104,11 @@ const BlogIndex = ({ data, location }) => {
                     <div>{new Date(post.date).toLocaleDateString()}</div>
                     <div>{getDomainName(post.link)}</div>
                   </header>
-                  <header className="post-title w-full text-base md:text-lg mb-2 font-semibold">
+                  <header className="w-full text-base md:text-lg mb-2 font-semibold">
                     {title}
                   </header>
                   <section className="w-full">
-                    <p className="post-description"
+                    <p
                       dangerouslySetInnerHTML={{ __html: post.description }}
                     />
                   </section>
