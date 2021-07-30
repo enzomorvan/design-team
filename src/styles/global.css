@@ -16,3 +16,58 @@ nav a::after {
 nav a:last-child::after {
   content: none;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
+.loading-gradient {
+  background: linear-gradient(270deg, #f8f8f8, #e4e4e4, #f8f8f8);
+  background-size: 600% 600%;
+
+  -webkit-animation: LoadingGradient 3s ease infinite;
+  -moz-animation: LoadingGradient 3s ease infinite;
+  animation: LoadingGradient 3s ease infinite;
+  }
+
+  @-webkit-keyframes LoadingGradient {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @-moz-keyframes LoadingGradient {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @keyframes LoadingGradient {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }

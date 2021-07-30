@@ -26,9 +26,11 @@
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "prismjs": "^1.24.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-lazyload": "^3.2.0",
+    "react-truncate": "^2.4.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "url-parse": "^1.5.3"

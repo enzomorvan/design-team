@@ -7,7 +7,7 @@ const Layout = ({ title, children }) => {
       <header className="mt-4 md:mt-12">
         <h1 className="text-4xl md:text-6xl mb-3">Design Team Dot Blog</h1>
         <div className="md:flex justify-between mb-3">
-          <p className="md:text-xl mb-2">
+          <p className="md:text-xl mb-1 md:mb-2">
             Articles from prominent design teams
           </p>
           <nav className="mb-3 text-sm md:text-base">
