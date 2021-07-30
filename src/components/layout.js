@@ -12,7 +12,7 @@ const Layout = ({ title, children }) => {
           </p>
           <nav className="mb-3 text-sm md:text-base">
             <a href="/rss.xml">RSS</a>
-            <a href="">Coffee</a>
+            <a href="https://www.buymeacoffee.com/robedwards">Coffee</a>
             <a href="mailto:rob@robedwards.org">Email</a>
           </nav>
         </div>

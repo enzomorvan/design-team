@@ -53,7 +53,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo />
-      <div className="text-sm md:text-base mb-8">
+      <div className="text-sm md:text-base mb-6">
         <span className="font-semibold">Articles from:</span>
         <div>
           <a href="https://airbnb.design/">Airbnb</a>,{" "}
@@ -77,10 +77,10 @@ const BlogIndex = ({ data, location }) => {
           <a href="https://medium.com/uber-design">Uber</a>,{" "}
           <a
             target="_blank"
-            href="mailto:rob@robedwards.org?subject=Missing%20blog%20on%20designteam.blog&body=Hi%20Rob%2C%0D%0A%0D%0ALove%20the%20site%2C%20love%20you.%20However%2C%20I%20think%20you%20need%20to%20add%3A%20%5BSUGGESTION%20HERE%5D.%0D%0A%0D%0AThanks%20for%20the%20resource%2C%20you%20really%20didn't%20have%20to.%0D%0A%0D%0ABest%2C%0D%0A%0D%0AKind%20stranger."
+            href="mailto:rob@robedwards.org?subject=Missing%20blog%20on%20designteam.blog&body=Hi%20Rob%2C%20big%20fan.%20However,%20I%20think%20you%20should%20add%3A%20%5Bsuggestion%20here%5D%20to%20the%20site.%20Thanks%20again!%20%5Byour%20name%5D"
             className="underline"
           >
-            who's missing?
+            someone missing?
           </a>
         </div>
       </div>
