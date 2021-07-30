@@ -16,21 +16,3 @@ nav a::after {
 nav a:last-child::after {
   content: none;
 }
-
-.post-title {
-  overflow: hidden;
-  max-width: 75ch;
-}
-
-.post-title:after {
-  content: "…";
-}
-
-.post-description {
-  overflow: hidden;
-  max-width: 25ch;
-}
-
-.post-description:after {
-  content: "…";
-}
