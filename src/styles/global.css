@@ -2,3 +2,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav a {
+  vertical-align: middle;
+}
+
+nav a::after {
+  content: " | ";
+  display: inline-block;
+  padding: 0 0.5rem;
+}
+
+nav a:last-child::after {
+  content: none;
+}
+
+.post-title {
+  overflow: hidden;
+  max-width: 75ch;
+}
+
+.post-title:after {
+  content: "…";
+}
+
+.post-description {
+  overflow: hidden;
+  max-width: 25ch;
+}
+
+.post-description:after {
+  content: "…";
+}
