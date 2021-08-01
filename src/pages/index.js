@@ -64,9 +64,11 @@ const BlogIndex = ({ data, location }) => {
           <a href="https://medium.com/facebook-design">Facebook</a>,{" "}
           <a href="https://figma.com/blog/">Figma</a>,{" "}
           <a href="https://design.google/library/">Google</a>,{" "}
+          <a href="https://medium.com/design-ibm">IBM</a>,{" "}
           <a href="https://invisionapp.com/inside-design/">Invision</a>,{" "}
           <a href="https://design.lyft.com/">Lyft</a>,{" "}
           <a href="https://medium.design/">Medium</a>,{" "}
+          <a href="https://medium.com/microsoft-design">Microsoft</a>,{" "}
           <a href="https://medium.com/mozilla-opendesign">Mozilla</a>,{" "}
           <a href="https://medium.com/netflix-design">Netflix</a>,{" "}
           <a href="https://medium.com/salesforce-ux">Salesforce</a>,{" "}
