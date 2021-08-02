@@ -142,7 +142,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMongodbDesignteamPosts(sort: {order: DESC, fields: date}) {
+    allMongodbDesignteamPosts(filter: {hidden: {ne: true}}, sort: {order: DESC, fields: date}) {
       nodes {
         title
         link
